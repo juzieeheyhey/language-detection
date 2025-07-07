@@ -1,0 +1,25 @@
+{
+  "model_name": "google-bert/bert-base-multilingual-cased",
+  "dataset": "papluca/language-identification",
+  "version": "1_20250703_013444",
+  "training_args": {
+    "model": "google-bert/bert-base-multilingual-cased",
+    "data": "papluca/language-identification",
+    "version": null,
+    "output_dir": "./models",
+    "lr": 2e-05,
+    "num_epochs": 3,
+    "train_batch_size": 16,
+    "eval_batch_size": 16,
+    "weight_decay": 0.01
+  },
+  "metrics": {
+    "eval_loss": 0.07054134458303452,
+    "eval_accuracy": 0.9929,
+    "eval_runtime": 92.5697,
+    "eval_samples_per_second": 108.027,
+    "eval_steps_per_second": 6.752,
+    "epoch": 3.0
+  },
+  "timestamp": "2025-07-03T03:33:58.199060"
+}
