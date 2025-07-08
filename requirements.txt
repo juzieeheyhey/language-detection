@@ -1,0 +1,7 @@
+datasets==3.6.0
+evaluate==0.4.4
+fastapi==0.116.0
+numpy==2.3.1
+pydantic==2.11.7
+torch==2.7.1
+transformers==4.53.0
