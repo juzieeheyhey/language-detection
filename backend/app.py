@@ -3,8 +3,6 @@ from pydantic import BaseModel
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
 import torch.nn.functional as F 
-import json
-import os
 from typing import Literal
 from pathlib import Path
 from backend.languages import LANGUAGE_NAMES
