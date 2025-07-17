@@ -52,7 +52,8 @@ def detect_text(req: TextDetectRequest):
     with torch.no_grad():
         logits = model(**inputs).logits
 
-    probs = F.softmax(logits, dim=-1)[0]
+    TEMPERATURE = 2
+    probs = F.softmax(logits / TEMPERATURE, dim=-1)[0] 
     idx   = int(torch.argmax(probs))
     label = model.config.id2label[idx]
     language = LANGUAGE_NAMES.get(label, label)
