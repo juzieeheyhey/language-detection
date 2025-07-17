@@ -37,7 +37,7 @@ To reproduce this project locally, follow these steps:
     ```
     If Git LFS is not installed, run
     ```bash
-    python3 finetune.py
+    python finetune.py
     ```
     to train your own model.
 
@@ -45,7 +45,7 @@ To reproduce this project locally, follow these steps:
 
 2. **Install depenencies**
     ```bash
-    pythn -m venv venv
+    python -m venv venv
     source venv/bin/activate   
     pip install -r requirements.txt
     ```
