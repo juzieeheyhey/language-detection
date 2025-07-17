@@ -40,27 +40,34 @@ export function ResultDisplay({ result, isLoading, error }: ResultDisplayProps) 
                 </div>
             )}
             {result && !isLoading && !error && (
-                <div className="text-center space-y-4 animate-in fade-in-50 duration-500">
-                    <div className="space-y-2">
-                        <h3 className="text-lg font-semibold text-gray-800">Detection Result</h3>
-                        <div className="flex items-center justify-center gap-3 flex-wrap">
-                            <span className="text-lg px-4 py-2 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-full">
-                                {result.language}
-                            </span>
-                            <span className={`px-3 py-1 rounded-full border ${getConfidenceColor(result.confidence)}`}>
-                                {result.confidence.toFixed(0)}% confident
-                            </span>
+                result.confidence > 70 ? (
+                    <div className="text-center space-y-4 animate-in fade-in-50 duration-500">
+                        <div className="space-y-2">
+                            <h3 className="text-lg font-semibold text-gray-800">Detection Result</h3>
+                            <div className="flex items-center justify-center gap-3 flex-wrap">
+                                <span className="text-lg px-4 py-2 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-full">
+                                    {result.language}
+                                </span>
+                                <span className={`px-3 py-1 rounded-full border ${getConfidenceColor(result.confidence)}`}>
+                                    {result.confidence.toFixed(0)}% confident
+                                </span>
+                            </div>
                         </div>
+                        <p className="text-sm text-gray-600">
+                            {result.confidence >= 80
+                                ? "I'm quite confident about this detection! 🎯"
+                                : "This is my best guess based on the patterns 🤔"}
+                        </p>
                     </div>
-                    <p className="text-sm text-gray-600">
-                        {result.confidence >= 80
-                            ? "I'm quite confident about this detection! 🎯"
-                            : result.confidence >= 60
-                                ? "This is my best guess based on the patterns 🤔"
-                                : "This detection has lower confidence - try providing more input! 📝"}
-                    </p>
-                </div>
+                ) : (
+                    <div className="text-center space-y-2 animate-in fade-in-50 duration-500">
+                        <p className="text-sm text-gray-600">
+                            Hmmm, I’m not sure. Try again with longer text and standard punctuation/writing style.
+                        </p>
+                    </div>
+                )
             )}
+
 
         </div>
     )
