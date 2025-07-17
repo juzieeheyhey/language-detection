@@ -24,6 +24,24 @@ To reproduce this project locally, follow these steps:
    git clone https://github.com/juzieeheyhey/language-detection.git
    cd language-detection
     ```
+    Make sure you have [Git LFS](https://git-lfs.com/) installed. 
+    Then run the following **once** on your machine:
+
+    ```bash
+    git lfs install
+    ```
+    After cloning the repo, pull the large model files:
+
+    ```bash
+    git lfs pull
+    ```
+    If Git LFS is not installed, run
+    ```bash
+    python3 finetune.py
+    ```
+    to train your own model.
+
+
 
 2. **Install depenencies**
     ```bash
