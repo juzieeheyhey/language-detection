@@ -25,18 +25,23 @@ To reproduce this project locally, follow these steps:
    cd language-detection
     ```
 
-2. **Set up the backend**
+2. **Install depenencies**
     ```bash
-    cd backend
-    python -m venv venv
+    pythn -m venv venv
     source venv/bin/activate   
     pip install -r requirements.txt
-    uvicorn app.main:app --reload
+    ```
+
+2. **Set up the backend**
+    From the project root, run:
+    ```bash
+    uvicorn backend.app.main:app --reload
     ```
 
 3. **Set up the frontend**
+    From the project root, run:
     ```bash
-    cd ../frontend
+    cd frontend
     npm install
-    npm start
+    npm run dev
     ```
